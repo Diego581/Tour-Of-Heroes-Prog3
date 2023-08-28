@@ -8,6 +8,7 @@ import {
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { LogService } from '../log.service';
 
 @Component({
   selector: 'app-hero-search',
@@ -22,6 +23,7 @@ export class HeroSearchComponent implements OnInit {
 
   // Push a search term into the observable stream.
   search(term: string): void {
+    new LogService().log('Executing hero search function')
     this.searchTerms.next(term);
   }
 
